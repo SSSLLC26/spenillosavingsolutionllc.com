@@ -933,7 +933,11 @@
         <p>Ready to take the first step? Book a free 30-minute discovery call and let's figure out the best path forward for you.</p>
       </div>
       <div class="contact-grid">
-        <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+        <form class="contact-form fade-in" action="https://formsubmit.co/matthew@spenillosavingsolutionllc.com" method="POST">
+          <input type="hidden" name="_subject" value="New Discovery Call Request — Spenillo Saving Solution">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://spenillosavingsolutionllc.com/#contact">
+          <input type="hidden" name="_template" value="table">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your full name" required>
@@ -1048,17 +1052,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Contact form handler (sends to email via mailto as fallback)
-    function handleSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const message = document.getElementById('message').value;
-      const body = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone || 'Not provided'}%0A%0A${encodeURIComponent(message)}`;
-      window.location.href = `mailto:matt@spenillosavingsolutionllc.com?subject=Discovery Call Request from ${encodeURIComponent(name)}&body=${body}`;
-      alert('Opening your email client to send the message. If it doesn\'t open, please email matt@spenillosavingsolutionllc.com directly.');
-    }
   </script>
 </body>
 </html>
